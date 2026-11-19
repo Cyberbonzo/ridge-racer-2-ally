@@ -23,7 +23,11 @@ if [ -n "${DISPLAY:-}" ] && command -v xdotool >/dev/null; then
     ) &
 fi
 export NIMBUS_PSP_AT3P_ME="$PWD/runtime/at3p_me.so"
-exec ./runtime/nimbushost-psp --core "$PWD/runtime/UCES00422.so" \
+core="$PWD/runtime/rr2-nitro.so"
+for arg in "$@"; do
+    case "$arg" in --np-host|--np-join) core="$PWD/runtime/UCES00422.so";; esac
+done
+exec ./runtime/nimbushost-psp --core "$core" \
     --iso "$PWD/media/disc.iso" --exe-from-iso --work "$PWD/profile" \
     --gfx "$PWD/runtime/renderer.so" --api vulkan --scale 4 \
     --stop-field 2147483647 --lang en "$@" >logs/game.log 2>&1

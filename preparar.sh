@@ -25,3 +25,9 @@ while read -r digest name; do
     fi
 done <runtime.sha256
 (cd runtime && sha256sum -c ../runtime.sha256)
+tmp=$(mktemp runtime/.rr2-nitro.XXXXXX)
+trap 'rm -f "$tmp"' EXIT
+cc -std=c11 -O2 -Wall -Wextra -Werror -fPIC -shared nitro.c -Lruntime \
+    -Wl,--no-as-needed -l:UCES00422.so -Wl,-rpath,'$ORIGIN' -ldl -o "$tmp"
+chmod 755 "$tmp"
+mv -f "$tmp" runtime/rr2-nitro.so

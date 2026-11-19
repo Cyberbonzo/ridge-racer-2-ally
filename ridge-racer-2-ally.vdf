@@ -3,7 +3,7 @@
   "version" "3"
   "title" "Ridge Racer 2 - ROG Ally"
   "game" "Ridge Racer 2"
-  "description" "LT brake, RT throttle, LB camera, RB nitrous (Type A)."
+  "description" "LT brake, RT throttle, LB camera, Y nitrous, RB shift up (Type A)."
   "controller_type" "controller_xboxelite"
   "group"
   {
@@ -14,7 +14,7 @@
       "button_a" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button A" } } } }
       "button_b" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button B" } } } }
       "button_x" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button X" } } } }
-      "button_y" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button Y" } } } }
+      "button_y" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button SHOULDER_RIGHT" } } } }
     }
   }
   "group"
@@ -65,7 +65,7 @@
       "button_menu" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button SELECT" } } } }
       "button_escape" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button START" } } } }
       "left_bumper" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button SHOULDER_LEFT" } } } }
-      "right_bumper" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button SHOULDER_RIGHT" } } } }
+      "right_bumper" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button Y" } } } }
       "button_back_left" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button X" } } } }
       "button_back_left_upper" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button Y" } } } }
       "button_back_right_upper" { "activators" { "Full_Press" { "bindings" { "binding" "xinput_button B" } } } }
