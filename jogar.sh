@@ -4,7 +4,10 @@ cd "$(dirname "$(readlink -f "$0")")"
 if ! grep -qx 'terms_version=1' "${XDG_CONFIG_HOME:-$HOME/.config}/nimbus/terms-accepted.txt" 2>/dev/null; then
     exec ./Nimbus.run
 fi
-mkdir -p profile logs
+mkdir -p profile/user logs
+if [ ! -e profile/user/performance.ini ]; then
+    cp performance.ini profile/user/performance.ini
+fi
 game=$$
 if [ -n "${DISPLAY:-}" ] && command -v xdotool >/dev/null; then
     (

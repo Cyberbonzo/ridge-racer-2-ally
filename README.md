@@ -1,6 +1,6 @@
 # Ridge Racer 2 no ROG Ally com Bazzite
 
-Integração do Ridge Racer 2 europeu de PSP (UCES-00422) com a biblioteca Steam no Bazzite. A versão 0.1.1 usa o núcleo Linux x86-64 específico do jogo distribuído pelo Nimbus Alpha 2.2.1. O jogo e o Nimbus são fornecidos pelo jogador.
+Integração do Ridge Racer 2 europeu de PSP (UCES-00422) com a biblioteca Steam no Bazzite. A versão 0.1.2 usa o núcleo Linux x86-64 específico do jogo distribuído pelo Nimbus Alpha 2.2.1. O jogo e o Nimbus são fornecidos pelo jogador.
 
 ## Instalação
 
@@ -24,6 +24,8 @@ Use o esquema **Type A** do jogo. A Entrada Steam converte cada gatilho em um ú
 | Analógico esquerdo | Dirigir |
 
 O botão A confirma nos menus e Menu/Start pausa a corrida.
+
+O painel de desempenho do Nimbus começa oculto. As métricas podem ser reativadas em **F1 → Performance**.
 
 O renderizador Vulkan usa escala interna 4×. A janela de apresentação ocupa 1920 × 1080 com a proporção original preservada. A corrida em Seaside Route 765 foi observada a aproximadamente 60 FPS no Ally.
 
