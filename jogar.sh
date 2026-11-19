@@ -8,6 +8,23 @@ mkdir -p profile/user logs
 if [ ! -e profile/user/performance.ini ]; then
     cp performance.ini profile/user/performance.ini
 fi
+automatic=1
+for arg in "$@"; do
+    case "$arg" in
+        --np-host|--np-join|--load-state|--save-state-on-exit|--save-state-at) automatic=0;;
+    esac
+done
+if [ "$automatic" = 1 ]; then
+    mkdir -p progress
+    exec 9>progress/session.lock
+    flock -n 9 || { echo "Já existe uma sessão offline de Ridge Racer 2." >&2; exit 1; }
+    resume=$(python3 progresso.py prepare)
+    if [ -n "$resume" ]; then
+        set -- "$@" --load-state "$resume"
+    fi
+    set -- "$@" --save-state-on-exit "$PWD/progress/saida.state"
+    python3 progresso.py watch "$$" 9>&- >logs/progresso.log 2>&1 &
+fi
 game=$$
 if [ -n "${DISPLAY:-}" ] && command -v xdotool >/dev/null; then
     (

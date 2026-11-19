@@ -1,6 +1,6 @@
 # Ridge Racer 2 no ROG Ally com Bazzite
 
-Integração do Ridge Racer 2 europeu de PSP (UCES-00422) com a biblioteca Steam no Bazzite. A versão 0.1.3 usa o núcleo Linux x86-64 específico do jogo distribuído pelo Nimbus Alpha 2.2.1. O jogo e o Nimbus são fornecidos pelo jogador.
+Integração do Ridge Racer 2 europeu de PSP (UCES-00422) com a biblioteca Steam no Bazzite. A versão 0.1.4 usa o núcleo Linux x86-64 específico do jogo distribuído pelo Nimbus Alpha 2.2.1. O jogo e o Nimbus são fornecidos pelo jogador.
 
 ## Instalação
 
@@ -34,4 +34,6 @@ O renderizador Vulkan usa escala interna 4×. A janela de apresentação ocupa 1
 
 ## Progresso
 
-O jogo usa o mesmo cartão de memória local em cada inicialização. O progresso gravado fica em `profile/PSP/SAVEDATA/UCES00422/`. Para fazer um backup, feche o jogo e copie essa pasta. Os registros de execução ficam em `logs/game.log`.
+Ao fechar uma sessão offline normalmente, o Nimbus grava o ponto da partida, inclusive no meio de um tour. Ao abrir pelo atalho da Steam, o jogo retoma esse ponto. Durante o jogo, o atalho também solicita um checkpoint a cada 60 segundos enquanto a janela estiver disponível. Após uma interrupção, a retomada usa o último arquivo completo. Pode haver uma pequena pausa durante a gravação do checkpoint.
+
+O cartão de memória do jogo, com os dados de carreira que ele já gravou, fica em `profile/PSP/SAVEDATA/UCES00422/`. A retomada fica em `progress/`. Um cartão atualizado depois do último checkpoint tem preferência. Para transferir o progresso para outro aparelho com a mesma versão, feche o jogo e copie ambas as pastas. Os registros de execução ficam em `logs/game.log`.
